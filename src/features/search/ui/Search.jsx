@@ -19,16 +19,16 @@ function SearchInput() {
 
   return (
     <div className={styles.search}>
-      <div className={styles.search__container}>
+      <div className="input-container">
         <input
           type="text"
-          className={styles.search__input}
+          className={styles.search_input}
           placeholder="Поиск"
           value={searchQuery}
           onChange={handleInputChange}
           onKeyDown={handleKeyPress} 
         />
-        <div className={styles["search__input-icon"]}>
+        <div className="input-icon">
           <Search />
         </div>
       </div>

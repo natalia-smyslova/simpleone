@@ -1,0 +1,18 @@
+@import '../../../scss/abstracts/constants';
+
+.sidebar {
+  position: fixed; 
+  top: 4.8rem; 
+  left: 0;
+  bottom: 0; 
+  border-right: 1px solid $color-secondary-dark; 
+  z-index: 1000; 
+  display: flex;
+}
+
+.sidebar__wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+

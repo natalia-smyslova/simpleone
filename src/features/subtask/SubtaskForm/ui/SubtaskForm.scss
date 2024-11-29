@@ -1,0 +1,283 @@
+@import '@/scss/abstracts/constants';
+@import '@/scss/base/typography';
+@import '@/scss/components/btn';
+@import '@/scss/abstracts/mixins';
+
+.title-1.title-task {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  padding-bottom: 1.2rem;
+}
+
+.form {
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+
+    label {
+      margin-bottom: 0.8rem;
+      @include font($weight: 600);
+    }
+
+    input {
+      background-color: $color-secondary-light;
+      padding: 0.6rem 0 0.6rem 0.8rem;
+      border: 1px solid $color-tertiarly-light;
+      border-radius: 0.4rem;
+      width: 100%;
+      height: 3.2rem;
+      @include font();
+    }
+  }
+}
+
+.required {
+  color: $color-required;
+  margin-right: 0.4rem;
+}
+
+.input-btn {
+  @extend %btn;
+  margin-left: 0.4rem;
+
+  svg {
+    fill: $color-main-dark;
+    transition: fill 0.3s;
+  
+    &:hover {
+      fill: $color-accent;
+    }
+  }
+}
+
+.form-wrapper {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+}
+
+
+.input-container {
+  position: relative;
+  width: 100%;
+
+  input {
+    width: 100%;
+    padding-right: 3.6rem;
+    box-sizing: border-box;
+  }
+
+}
+
+.input-icon {
+  position: absolute;
+  top: 1.6rem;
+  right: 0.8rem;
+  transform: translateY(-50%);
+  cursor: pointer;
+  svg {
+    fill: #ABB1BA;
+    transition: fill 0.3s;
+
+    &:hover {
+      fill: $color-accent;
+    }
+  }
+}
+
+
+/* Убрать иконку календаря в WebKit */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+.form-page {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.6rem;
+}
+
+/* (1) Первый элемент — одна колонка */
+.form-page>.form-wrapper:nth-child(1) {
+  grid-column: span 2;
+}
+
+/* (2-3) Второй и третий элементы — две колонки */
+.form-page>.form-wrapper:nth-child(2),
+.form-page>.form-wrapper:nth-child(3) {
+  grid-column: span 1;
+}
+
+/* (4-5) Четвертый и пятый элементы — две колонки */
+.form-page>.form-wrapper:nth-child(4),
+.form-page>.form-wrapper:nth-child(5) {
+  grid-column: span 1;
+}
+
+/* (6-7) Шестой и седьмой элементы — две колонки */
+.form-page>.form-wrapper:nth-child(6),
+.form-page>.form-wrapper:nth-child(7) {
+  grid-column: span 1;
+}
+
+/* (8-9) Восьмой и девятый элементы — две колонки */
+.form-page>.form-wrapper:nth-child(8),
+.form-page>.form-wrapper:nth-child(9) {
+  grid-column: span 1;
+}
+
+/* (10) Десятый элемент — одна колонка */
+.form-page>.form-wrapper:nth-child(10) {
+  grid-column: span 2;
+}
+
+/* (11) Одиннадцатый элемент — одна колонка */
+.form-page>.form-wrapper:nth-child(11) {
+  grid-column: span 2;
+}
+
+/* (12-13) Двенадцатый и тринадцатый элементы — две колонки */
+.form-page>.form-wrapper:nth-child(12),
+.form-page>.form-wrapper:nth-child(13) {
+  grid-column: span 1;
+}
+
+/* (14-15) Четырнадцатый и пятнадцатый элементы — две колонки */
+.form-page>.form-wrapper:nth-child(14),
+.form-page>.form-wrapper:nth-child(15) {
+  grid-column: span 1;
+}
+
+// МОДАЛКА
+
+.form.form-modal {
+  top: 1.6rem;
+  left: auto;
+  height: 100%;
+  background: white;
+  padding: 1.6rem;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(11, 12, 14, 0.4);
+  z-index: 1999;
+}
+
+.approvers-input {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  padding: 0.4rem 3rem 0.4rem 0.4rem;
+  border: 0.1rem solid #ccc;
+  border-radius: 0.4rem;
+  background-color: $color-secondary-light;
+  position: relative;
+  max-width: 100%;  
+  overflow: hidden; 
+}
+
+.approvers__wrapper {
+  display: flex;
+  width: 100%;
+}
+
+.approver-chip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 2.4rem;
+  padding: 0.2rem 0.8rem;
+  background-color: $color-badge-background;
+  border: 0.1rem solid $color-badge-border;
+
+  border-radius: 4px;
+  white-space: nowrap;
+  @include font();
+  max-width: 100%;
+}
+.approver-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%; 
+}
+
+.chip-close-btn {
+  width: 1.6rem;
+  height: 1.6rem;
+  margin-left: 0.8rem;
+  border: none;
+  background: none;
+  position: relative;
+  cursor: pointer;
+}
+
+.chip-close-btn::before,
+.chip-close-btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 1.5px;
+  background-color: $color-main-dark;
+  transform-origin: center;
+}
+
+.chip-close-btn::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.chip-close-btn::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.chip-close-btn:hover::before,
+.chip-close-btn:hover::after {
+  background-color: $color-accent;
+}
+
+
+@include respond(tablet) {
+  .form-page {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@include respond(phone) {
+
+  .approvers__wrapper{
+    width: 100%;
+  }
+  .approvers-input {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 100%; 
+    overflow: hidden;
+  }
+
+  .approver-chip {
+    max-width: 100%; 
+  }
+
+  .approver-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%; 
+  }
+
+}

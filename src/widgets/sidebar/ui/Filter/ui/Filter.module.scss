@@ -1,0 +1,55 @@
+@import "@/scss/components/btn";
+@import "@/scss/abstracts/constants";
+@import "@/scss/base/typography";
+
+.filter {
+  padding: 1.6rem;
+  display: flex;
+  border-bottom: 0.1rem solid $color-secondary-dark;
+
+  &__icon {
+    position: absolute;
+    right: 1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.6rem;
+    height: 2rem;
+    background: url('@/shared/assets/images/icons/Filter.svg') no-repeat center;
+    background-size: contain;
+    pointer-events: none;
+  }
+
+}
+.pin__btn {
+  @extend %btn;
+  margin-left: 0.8rem;
+  svg {
+    fill: $color-main-dark;
+    transition: fill 0.3s;
+  
+    &:hover {
+      fill: $color-accent;
+    }
+  }
+}
+
+.filter__wrapper {
+  position: relative;
+  width: 20.8rem;
+  height: 3.2rem;
+}
+
+.filter__input {
+  width: 100%;
+  height: 100%;
+  border: 0.1rem solid $color-tertiarly-light; 
+  border-radius: 4px;
+  padding: 0.6rem 0.6rem 0.6rem 0.8rem; 
+  background-color: $color-secondary-light;
+  @include font();
+
+  &::placeholder {
+    @include font($color: $color-secondary-dark);
+  }
+
+}

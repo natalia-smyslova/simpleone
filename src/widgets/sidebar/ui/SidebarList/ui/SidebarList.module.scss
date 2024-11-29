@@ -1,0 +1,38 @@
+@import '@/scss/abstracts/constants';
+@import '@/scss/base/typography';
+
+.nav_list {
+  list-style: none;
+  text-align: start;
+  padding: 0 16px;
+  background-color: $color-main-light;
+}
+
+.nav_list_item {
+  position: relative;
+  padding-left: 20px;
+  line-height: 2;
+  padding: 10px 24px;
+  @include font();
+  cursor: pointer;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 37%;
+    width: 10px;
+    height: 10px;
+    border-left: 2px solid #000;
+    border-bottom: 2px solid #000;
+    transform: rotate(-135deg);
+  }
+
+  &::before {
+    border-color: $color-secondary-dark;
+  }
+
+  &:hover::before {
+    border-color: $color-accent;
+  }
+}

@@ -1,0 +1,25 @@
+@import "@/scss/abstracts/constants";
+
+.nav__buttons{
+  width: 5.6rem;
+  display: flex;
+  flex-direction: column;
+  border-right: 0.1rem solid $color-tertiarly-light;
+  padding: 1.6rem;
+  gap: 3.2rem;
+  svg{
+    height: 2.4rem;
+    width: 2.4rem;
+  }
+}
+
+.sidebar__icon{
+  svg {
+    fill: $color-main-dark;
+    transition: fill 0.3s;
+  
+    &:hover {
+      fill: $color-accent;
+    }
+  }
+}
